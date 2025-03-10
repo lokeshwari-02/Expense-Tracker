@@ -38,7 +38,7 @@ const Landing = () => {
       />
       <div className="landing-container">
           <nav className="navbar">
-          <div className="website-name">Hungry Hault</div>
+          <div className="website-name">Expense Tracker</div>
           <div className="auth-links">
             <Link to="/login" className="auth-button">Login</Link>
             <Link to="/register" className="auth-button">Sign Up</Link>

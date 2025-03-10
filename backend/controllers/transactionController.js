@@ -1,6 +1,31 @@
 import Transaction from "../models/TransactionModel.js";
 import User from "../models/UserSchema.js";
 import moment from "moment";
+import Transaction from '../models/Transaction.js';
+
+// Controller for deleting multiple transactions
+export const deleteMultipleTransactionsController = async (req, res) => {
+    try {
+        const { transactionIds } = req.body;
+        await Transaction.deleteMany({ _id: { $in: transactionIds } });
+        res.status(200).json({ message: 'Transactions deleted successfully' });
+    } catch (error) {
+        res.status(500).json({ message: 'Error deleting transactions', error });
+    }
+};
+
+// Controller for fetching a single transaction
+export const getTransactionByIdController = async (req, res) => {
+    try {
+        const transaction = await Transaction.findById(req.params.id);
+        if (!transaction) {
+            return res.status(404).json({ message: 'Transaction not found' });
+        }
+        res.status(200).json(transaction);
+    } catch (error) {
+        res.status(500).json({ message: 'Error fetching transaction', error });
+    }
+};
 
 export const addTransactionController = async (req, res) => {
   try {
@@ -224,4 +249,8 @@ export const updateTransactionController = async (req, res) => {
       messages: err.message,
     });
   }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 77d779bde (Fixed line endings)
 };

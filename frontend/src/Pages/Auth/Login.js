@@ -2,13 +2,24 @@
 import { useCallback, useEffect, useState } from "react";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
 import Particles from "react-tsparticles";
+<<<<<<< HEAD
 import { loadFull } from "tsparticles";
+=======
+>>>>>>> 77d779bde (Fixed line endings)
 import AccountBalanceWalletIcon from "@mui/icons-material/AccountBalanceWallet";
 import { Link, useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
 import { loginAPI } from "../../utils/ApiRequest";
+<<<<<<< HEAD
+=======
+import { loadFull } from "tsparticles";
+
+const particlesInit = async (engine) => {
+    await loadFull(engine);
+};
+>>>>>>> 77d779bde (Fixed line endings)
 
 const Login = () => {
   const navigate = useNavigate();
